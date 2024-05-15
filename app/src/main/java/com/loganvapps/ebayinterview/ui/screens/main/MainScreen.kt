@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.loganvapps.ebayinterview.data.models.Earthquake
+import com.loganvapps.ebayinterview.data.models.Earthquakes
 
 @Composable
 fun MainScreenController(viewModel: EarthquakeViewModel, modifier: Modifier = Modifier) {
@@ -25,12 +26,12 @@ fun MainScreenController(viewModel: EarthquakeViewModel, modifier: Modifier = Mo
 }
 
 @Composable
-fun MainScreen(data:List<Earthquake>) {
+fun MainScreen(data: Earthquakes) {
     LazyColumn(
         modifier = Modifier.fillMaxSize()
     ) {
-        items(count = data.size) {
-            EarthquakeCard(earthquake = data[it])
+        items(count = data.earthquakes.size) {
+            EarthquakeCard(earthquake = data.earthquakes[it])
         }
     }
 }
