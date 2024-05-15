@@ -77,6 +77,8 @@ dependencies {
     implementation libs.kotlinx.serialization.json
     implementation libs.gson
 
+    //Coil
+    implementation(libs.coil.compose)
 
     // Networking
     implementation libs.grpc.okhttp
@@ -87,6 +89,8 @@ dependencies {
     testImplementation libs.junit
     testImplementation libs.mockk
     testImplementation libs.kotlinx.coroutines.test
+    testImplementation libs.androidx.core.testing
+
 
     androidTestImplementation libs.mockk.android
     androidTestImplementation libs.androidx.test.ext.junit
