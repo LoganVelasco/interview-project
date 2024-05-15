@@ -11,17 +11,23 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.loganvapps.ebayinterview.ui.screens.main.EarthquakeViewModel
+import com.loganvapps.ebayinterview.ui.screens.main.MainScreen
+import com.loganvapps.ebayinterview.ui.screens.main.MainScreenController
 import com.loganvapps.ebayinterview.ui.theme.EbayInterviewTheme
 
 class MainActivity : ComponentActivity() {
+
+    val viewModel = EarthquakeViewModel()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             EbayInterviewTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    MainScreenController(
+                        viewModel = viewModel,
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
